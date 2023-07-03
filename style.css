@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #0b1014;
+    color: white;
+}
+
+.headerTitle{
+    text-align: center;
+    margin-top: 40px;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.containerMovies{
+    width: 65vw;
+    margin: 0 auto;
+}
+
+/* Input e botão de enviar*/
+form{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 50px;
+    border: none;
+
+}
+
+form input {
+    padding: 0 0 0 20px;
+    border: none;
+    width: 90%;
+    border-radius: 5px 0 0 5px;
+}
+
+.submit{
+    padding: 10px;
+    background-color: rgb(170, 170, 202);
+    width: 20%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Lista dos filmes */
+
+div.list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.list h3{
+    color: white;
+    margin-top: 70px;
+    font-size: 1rem;
+}
+
+#h2Year{
+    margin: 10px  0 0 0;  
+}
+
+div.item{
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img img{
+    width: 165px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.bannerTitle{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    /* Outros estilos do título */
+    height: 100%;
+    width: 101%;
+    border-radius: 15px;
+    opacity: 0;
+    transition:opacity 0.2s ease;
+}
+
+.bannerTitle:hover{
+    opacity: 1;
+}
+
+.bannerTitle h2{
+    font-size: 1rem;
+}
+
+/* Botões de próxima página e página anterior */
+
+.btnBackNext{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.nextPage, .previousPage {
+    display: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: rgba(63, 63, 63, 0.425);
+    cursor: pointer;
+    color: white;
+}
+.nextPage:hover, .previousPage:hover{
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+/* Container do filme selecionado */
+.containerSelectedMovie{
+    max-width: 65vw;
+    justify-content: center;
+    margin: 40px auto;
+    display: none;
+}
+
+.back{
+    margin-bottom: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Container das informaçoes */
+.info{
+    margin-right: 30px;
+}
+
+.info p {
+    display: inline-block;
+}
+
+/* Estilizações que se repetem */
+
+.title, .scores, .sinopse{
+    margin: 25px 0;
+}
+
+/* Container do ano, idade e classificação de idade */
+.minAnoIdade span{
+    color: rgb(177, 174, 174);
+    font-size: 0.9rem;
+}
+
+.minAnoIdade .yearOld {
+    background-color: rgb(177, 174, 174);
+    padding: 2px;
+    border-radius: 3px;
+    color: black;
+}
+
+/* Nome do filme */
+.title{
+    font-size: 3.5rem;
+}
+
+/* Notas do filme */
+.scores{
+    display:flex;
+    align-items: center;
+}
+
+.imdb {
+    margin-right: 15px;
+}
+
+.imdb img{
+    width: 20px;
+}
+
+.imdb, .tomatometer{
+    display: flex;
+    align-items: center;
+    width: 110px; 
+}
+
+.imdb span{
+    display: flex;
+    padding: 8px;
+    color: black;
+    border-radius: 5px 0 0 5px;
+    background-color: rgb(255, 154, 26);
+    font-weight: bold;
+}
+
+.tomatometer div{
+    background-color: rgb(249, 50, 8);
+    width: 30px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.tomatometer div img{
+    width: 20px;
+}
+
+.imdb p, .tomatometer p{
+    border: 0.5px solid rgba(129, 129, 129, 0.603);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Sinopse e Diretores*/
+
+
+.sinopse h2, .writers h2{
+    color: rgb(177, 174, 174);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.sinopse p, .writers p{
+    font-size: 0.9rem;
+}
+
+.writers{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.writers p{
+    margin-bottom: 10px;
+}
+
+
+/* Capa do filme */
+
+
+.movieImage img{
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.image{
+    display: flex;
+}
+
+/* loading animação */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b1014;;
+  }
+  
+  .loading:before {
+    content: "";
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+    border-top-color: #000;
+    animation: spin 1s linear infinite;
+  }
+  
+  .loading:before {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  
+.loading p {
+    margin-top: 15px;
+}
+
+
+
+/*  Responsividade  */
+
+@media (max-width: 700px){
+    .containerSelectedMovie{
+        flex-direction: column;
+        margin: 0 auto;
+
+    }
+
+    .movieImage img{
+        width: 50%;
+        
+    }
+
+    .title{
+        font-size: 3.5rem;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+    .bannerTitle {
+      opacity: 1;
+      height: 35%;
+      top: 85%;
+      justify-content: center;
+      border-radius: 0 0 15px 15px;
+
+    }
+  
+    .bannerTitle h2 {
+      font-size: 0.85rem;
+      margin-bottom: 3px;
+    }
+  
+    #h2Year {
+      margin: 0;
+    }
+    
+    .submit{
+        width: 40%;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .nextPage, .previousPage {
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+
+
+}
